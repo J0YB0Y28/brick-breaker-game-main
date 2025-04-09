@@ -60,5 +60,5 @@ Tu peux :
 
 ## 👨‍💻 Auteur
 
-Développé avec ❤️ par [Teddy Kana].  
+Développé avec ❤️ par Teddy Kana.  
 Licence : MIT – libre à modifier et à partager !
