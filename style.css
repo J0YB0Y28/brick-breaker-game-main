@@ -1,29 +1,169 @@
-.container {
-    height: 400px;
-    width: 80%;
-    margin-left: 5%;
-    overflow: hidden;
-    border: 1px solid black;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    height: 500px;
+    width: 90%;
+    max-width: 800px;
     margin-top: 20px;
+    overflow: hidden;
+    border-radius: 15px;
     position: relative;
-    background-color: darkgrey;
-}
-
-.score,
-.lives {
-    font-size: 3em;
-}
-
-.brick {
+    background-color: #2c2c2c;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    touch-action: none;
+  }
+  
+  .hud {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 800px;
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+  
+  .score,
+  .lives-display,
+  .level {
+    margin: 0 10px;
+  }
+  
+  .brick {
     position: absolute;
+    width: 90px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom right, #ff416c, #ff4b2b);
+    transition: transform 0.2s ease;
+  }
+  
+  .brick:hover {
+    transform: scale(1.05);
+  }
+  
+  .menu {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 91px;
-    height: 40px;
-    padding: 1px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     color: white;
-    border: 1px solid white;
-    font-size: 1.8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
     text-align: center;
-    line-height: 40px;
-}
+  }
+  
+  .menu button {
+    font-size: 1.5em;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff416c;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(255, 65, 108, 0.4);
+    transition: background 0.3s;
+  }
+  
+  .menu button:hover {
+    background-color: #ff4b2b;
+  }
+ 
+  
+  .control-choice {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+  }
+  .control-choice label {
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  #pauseOverlay {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 60px;
+    border-radius: 20px;
+    z-index: 999;
+  }
+  
+  .skin-choice {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+  }
+  .skin-choice select {
+    padding: 5px 10px;
+    font-size: 1em;
+    border-radius: 5px;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+    background-color: #2c2c2c;
+    color: white;
+    margin: 10% auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  }
+  
+  .modal-content button {
+    margin-top: 20px;
+    padding: 8px 20px;
+    font-size: 1em;
+    background-color: #ff416c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .modal-content button:hover {
+    background-color: #ff4b2b;
+  }
+  
