@@ -194,6 +194,6 @@ footer.footer {
 .footer-bar {
   margin-top: 5px;
   height: 2px;
-  background: linear-gradient(90deg, #0af, #fff, #0af);
+  background: transparent;
   animation: footerBarSlide 4s linear infinite;
 }
